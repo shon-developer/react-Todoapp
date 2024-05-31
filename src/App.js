@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="bg-[#111111] text-gray-300 min-h-screen flex flex-col gap-6 pt-24 items-center justify-start">
       <h1 className="text-5xl text-cyan-500 pb-10">Todo App</h1>
-      <form className="flex gap-10">
+      <form className="flex gap-4">
         <input
           type="text"
           placeholder="enter your task"
@@ -64,13 +64,13 @@ function App() {
           onChange={(e) => {
             setNewTask(e.target.value);
           }}
-          className="bg-gray-700 text-white px-4 py-2 w-[350px] rounded-md border-none outline-none tracking-wider"
+          className="bg-gray-700 text-white px-4 py-2 w-[300px] rounded-md border-none outline-none tracking-wider"
         />
         <button
           onClick={addTask}
-          className="px-6 py-2 bg-cyan-500 rounded-md text-black"
+          className="px-4 py-2 bg-cyan-500 rounded-md text-black"
         >
-          Add Task
+          Add
         </button>
       </form>
       <div>
