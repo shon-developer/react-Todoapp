@@ -77,7 +77,7 @@ function App() {
         {todoList &&
           todoList.map((item, index) => {
             return (
-              <div className="flex w-[400px] justify-between">
+              <div className="flex w-[300px] justify-between">
                 <h1
                   className={`text-xl ${
                     item.completed
