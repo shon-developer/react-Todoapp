@@ -54,7 +54,7 @@ function App() {
   };
 
   return (
-    <div className="bg-[#111111] text-gray-300 min-h-screen flex flex-col gap-6 pt-24 items-center justify-start">
+    <div className="bg-[#111111] text-gray-100 min-h-screen flex flex-col gap-6 pt-24 items-center justify-start">
       <h1 className="text-5xl text-cyan-500 pb-10">Todo App</h1>
       <form className="flex gap-4">
         <input
