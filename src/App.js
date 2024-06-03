@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ClearIcon from "@mui/icons-material/Clear";
 import EditIcon from "@mui/icons-material/Edit";
 import DoneIcon from "@mui/icons-material/Done";
 
+const localData = () => {
+  let list = localStorage.getItem("data");
+  if (list) {
+    return JSON.parse(list);
+  } else {
+    return [];
+  }
+};
+
 function App() {
   const [newTask, setNewTask] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(localData());
   // addTask
   const addTask = (e) => {
     e.preventDefault();
@@ -44,14 +53,20 @@ function App() {
 
   // isComplete
   const isComplete = (id) => {
-    setTodoList(todoList.map((item) => {
-      if (item.id === id) {
-        return { ...item, completed: true };
-      } else {
-        return item;
-      }
-    }))
+    setTodoList(
+      todoList.map((item) => {
+        if (item.id === id) {
+          return { ...item, completed: true };
+        } else {
+          return item;
+        }
+      })
+    );
   };
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(todoList));
+  });
 
   return (
     <div className="bg-[#111111] text-gray-100 min-h-screen flex flex-col gap-6 pt-24 items-center justify-start">
